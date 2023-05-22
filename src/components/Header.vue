@@ -1,11 +1,8 @@
 <template>
 <div class="header">
     <ul class="flex ">
-        <li class="list-none font-bold mr-3 cursor-pointer text-black hover:text-white">
-            <router-link :to="{name: 'home-page'}" activeClass="text-white">Home</router-link>
-        </li>
-        <li class="list-none font-bold  ml-3 cursor-pointer text-black hover:text-white">
-            <router-link to="/about" activeClass="text-white">About</router-link>
+       <li class="list-none font-bold  ml-3 cursor-pointer text-black hover:text-white">
+            <router-link :to="item.path" activeClass="text-white">{{ item.name }}</router-link>
         </li>
     </ul>
 </div>
@@ -16,7 +13,17 @@ export default {
 
     data() {
         return {
-            list
+           listHeader: [
+                {
+                    name: 'Home',
+                    path: '/'
+                },
+
+                {
+                    name: 'About',
+                    path: '/about'
+                }
+            ]
         }
     },
 
